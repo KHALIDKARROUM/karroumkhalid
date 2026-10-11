@@ -2,16 +2,18 @@
 
 A simple portfolio for data science, machine learning, and backend projects.
 
-The site uses a single column, plain text, and standard links. Project details include the problem, implementation, evaluation context, limitations, and source code.
+The home page shows large section titles. Each title opens its details in the same tab and shared page layout, with a link back home. Project details include the problem, implementation, evaluation context, limitations, and source code.
 
 The Dark mode checkbox in the header switches the color scheme and remembers the choice in your browser.
 
 ## Pages
 
-- `/` — introduction, projects, skills, and contact links
+- `/` — large Projects, Skills, About, and Contact links
 - `/projects` — all five projects
 - `/projects/[slug]` — project details
-- `/about` — education, interests, and working approach
+- `/skills` — skill groups and technologies
+- `/about` — introduction, education, interests, and working approach
+- `/contact` — availability and contact links
 
 ## Local setup
 

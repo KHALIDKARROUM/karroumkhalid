@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { BackToHome } from '@/components/portfolio/BackToHome';
 import { ContactCTA } from '@/components/portfolio/ContactCTA';
 import { education } from '@/data/education';
 import { profile, technicalInterests } from '@/data/profile';
@@ -13,8 +14,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main id="main-content" tabIndex={-1}>
+      <BackToHome />
       <section aria-labelledby="about-title">
         <h1 id="about-title">About</h1>
+        <p>{profile.role} · {profile.location}</p>
+        <p>{profile.positioning}</p>
+        <p>{profile.availability}</p>
         <p>
           I’m {profile.name}, based in {profile.location}. I work on data
           analysis, machine learning, and backend development.
