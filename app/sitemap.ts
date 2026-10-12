@@ -1,3 +1,6 @@
+
+export const dynamic = 'force-static';
+
 import type { MetadataRoute } from 'next';
 import { profile } from '@/data/profile';
 import { projects } from '@/data/projects';
