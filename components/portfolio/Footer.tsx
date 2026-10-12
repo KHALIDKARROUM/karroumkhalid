@@ -15,8 +15,8 @@ export function Footer() {
           </div>
           <nav aria-label="Footer navigation">
             <span className="footer-label">EXPLORE</span>
-            <Link href="/projects">Projects</Link>
             <Link href="/about">About</Link>
+            <Link href="/projects">Projects</Link>
             <Link href="/skills">Skills</Link>
             <Link href="/contact">Contact</Link>
           </nav>

@@ -5,9 +5,9 @@ export function EducationTimeline() {
   return (
     <ol
       className="education-timeline"
-      aria-label="Education from baccalaureate to master’s studies"
+      aria-label="Education, most recent first"
     >
-      {education.toReversed().map((item) => (
+      {education.map((item) => (
         <li
           className={
             item.expected ? 'timeline-entry is-current' : 'timeline-entry'

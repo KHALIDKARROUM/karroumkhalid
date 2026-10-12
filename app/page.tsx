@@ -56,50 +56,12 @@ export default function Home() {
               GitHub <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           </div>
-          <a className="scroll-cue" href="#projects">
+          <a className="scroll-cue" href="#about">
             <ArrowDown size={13} aria-hidden="true" />
             SCROLL TO EXPLORE
           </a>
         </div>
         <PipelineVisual />
-      </section>
-      <section
-        id="projects"
-        className="home-section"
-        aria-labelledby="projects-title"
-      >
-        <div className="section-header-row">
-          <SectionHeading
-            label="SELECTED WORK"
-            title="Projects"
-            id="projects-title"
-          />
-          <Link className="text-link" href="/projects">
-            All projects <ArrowUpRight size={16} aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="project-list">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
-      </section>
-      <section
-        id="skills"
-        className="home-section"
-        aria-labelledby="skills-title"
-      >
-        <div className="section-header-row">
-          <SectionHeading
-            label="THE TOOLKIT"
-            title="Skills"
-            id="skills-title"
-          />
-          <Link className="text-link" href="/skills">
-            Explore my skills <ArrowUpRight size={16} aria-hidden="true" />
-          </Link>
-        </div>
-        <SkillsGrid />
       </section>
       <section
         id="about"
@@ -144,6 +106,44 @@ export default function Home() {
               <li key={interest}>{interest}</li>
             ))}
           </ul>
+        </div>
+      </section>
+      <section
+        id="skills"
+        className="home-section"
+        aria-labelledby="skills-title"
+      >
+        <div className="section-header-row">
+          <SectionHeading
+            label="THE TOOLKIT"
+            title="Skills"
+            id="skills-title"
+          />
+          <Link className="text-link" href="/skills">
+            Explore my skills <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+        <SkillsGrid />
+      </section>
+      <section
+        id="projects"
+        className="home-section"
+        aria-labelledby="projects-title"
+      >
+        <div className="section-header-row">
+          <SectionHeading
+            label="SELECTED WORK"
+            title="Projects"
+            id="projects-title"
+          />
+          <Link className="text-link" href="/projects">
+            All projects <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="project-list">
+          {projects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
         </div>
       </section>
       <ContactCTA>

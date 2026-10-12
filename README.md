@@ -8,7 +8,7 @@ The theme button in the header switches between dark and light appearances and r
 
 ## Pages
 
-- `/` — introduction, project gallery, skills, about, and contact
+- `/` — introduction, about, skills, project gallery, and contact
 - `/projects` — all five projects
 - `/projects/[slug]` — project details
 - `/skills` — skill groups and technologies
