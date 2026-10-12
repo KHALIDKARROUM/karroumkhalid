@@ -1,7 +1,12 @@
+
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Keep the Vercel build separate from Vinext's local preview artifacts.
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   distDir: '.next-vercel',
 };
 
