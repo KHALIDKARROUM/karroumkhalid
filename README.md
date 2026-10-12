@@ -38,13 +38,14 @@ For the Vercel build, run `npm run build:vercel`.
 
 ## Editing content
 
-- `data/profile.ts` — name, role, availability, and contact links
+- `data/profile.ts` — name, role, availability, social accounts, and language levels
 - `data/projects.ts` — project descriptions, technologies, evaluation, and repository links
 - `data/skills.ts` — skill groups
-- `data/education.ts` — education
+- `data/education.ts` — education from baccalaureate to master’s studies and expected graduation
+- `data/experience.ts` — professional experience, project responsibilities, and technologies
 - `app/globals.css` — shared styles
 
-Add an email or LinkedIn URL in `data/profile.ts` to show those contact links.
+LinkedIn and GitHub are shown on the Contact page and in the shared contact links. Edit `socialAccounts` in `data/profile.ts` to maintain the account cards. Add an email in the same file to show an email link in the shared contact section. Keep education and experience dates tied to confirmed information.
 
 To make the CV available, add `public/Khalid-Karroum-CV.pdf` and set `resume.available` to `true`. Until then, the CV link stays hidden.
 

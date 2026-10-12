@@ -54,7 +54,7 @@ const personSchema = {
   jobTitle: profile.role,
   address: { '@type': 'PostalAddress', addressCountry: 'MA' },
   url: profile.siteUrl,
-  sameAs: [profile.github],
+  sameAs: [profile.github, profile.linkedIn],
   knowsAbout: [
     'Data Science',
     'Machine Learning',

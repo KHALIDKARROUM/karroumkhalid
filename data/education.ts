@@ -1,17 +1,61 @@
-export const education = [
-  {
-    degree: "Master's-level studies",
-    field: 'Data Science & Information Systems Security',
-    institution: undefined as string | undefined,
-    location: 'Morocco',
-    startYear: undefined as string | undefined,
-    endYear: undefined as string | undefined,
-    coursework: [] as string[],
-  },
-] as const;
+type EducationEntry = {
+  id: string;
+  degree: string;
+  field: string;
+  institution?: string;
+  location?: string;
+  startYear?: string;
+  endYear?: string;
+  expected?: boolean;
+  coursework: string[];
+};
 
-export const educationConfigNotes = {
-  institution: 'Add your university name in data/education.ts.',
-  dates: 'Add your start and expected graduation years in data/education.ts.',
-  coursework: 'Add only relevant coursework you can discuss in an interview.',
-} as const;
+export const education: EducationEntry[] = [
+  {
+    id: 'master',
+    degree: 'Master d’Excellence',
+    field: 'Data Science & Information Systems Security',
+    institution: 'Université Sultan Moulay Slimane',
+    location: 'Beni Mellal, Morocco',
+    startYear: '2025',
+    endYear: '2027',
+    expected: true,
+    coursework: [
+      'Advanced Machine Learning',
+      'Deep Learning',
+      'Data Analysis',
+      'Advanced Python / OOP',
+    ],
+  },
+  {
+    id: 'licence',
+    degree: 'Licence d’Excellence',
+    field: 'Data Science & Information Systems Security',
+    institution: 'Université Sultan Moulay Slimane',
+    location: 'Beni Mellal, Morocco',
+    startYear: '2024',
+    endYear: '2025',
+    coursework: [
+      'Machine Learning',
+      'Feature Engineering',
+      'Operations Research',
+      'Networks & Cybersecurity',
+    ],
+  },
+  {
+    id: 'deug',
+    degree: 'DEUG',
+    field: 'Mathematics & Computer Science',
+    institution: 'Université Sultan Moulay Slimane',
+    location: 'Beni Mellal, Morocco',
+    startYear: '2021',
+    endYear: '2024',
+    coursework: [],
+  },
+  {
+    id: 'baccalaureate',
+    degree: 'Baccalaureate',
+    field: 'Sciences Mathématiques A',
+    coursework: [],
+  },
+];

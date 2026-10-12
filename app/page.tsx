@@ -127,12 +127,15 @@ export default function Home() {
         </div>
         <div className="about-preview-details">
           <p className="eyebrow">EDUCATION</p>
-          {education.map((item) => (
-            <div className="education-card" key={item.field}>
+          {education.slice(0, 1).map((item) => (
+            <div className="education-card" key={item.id}>
               <span className="education-dot" aria-hidden="true" />
               <p>{item.degree}</p>
               <h3>{item.field}</h3>
-              <span className="muted">{item.location}</span>
+              <p>{item.institution}</p>
+              <span className="muted">
+                {item.startYear} — {item.endYear} (expected) · {item.location}
+              </span>
             </div>
           ))}
           <p className="eyebrow interests-label">INTERESTS</p>

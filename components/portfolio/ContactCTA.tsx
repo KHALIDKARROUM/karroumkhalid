@@ -42,7 +42,7 @@ export function ContactCTA({ headingLevel = 2, children }: ContactCTAProps) {
             <LinkedInIcon size={20} />
             <span>
               <small>LINKEDIN</small>
-              {profile.name}
+              khalid-karroum
             </span>
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
