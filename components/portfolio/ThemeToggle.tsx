@@ -1,6 +1,7 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
+import { Moon, Sun } from 'lucide-react';
 
 const themeEvent = 'portfolio-theme-change';
 
@@ -32,14 +33,19 @@ export function ThemeToggle() {
   }
 
   return (
-    <label className="theme-toggle">
-      <input
-        type="checkbox"
-        checked={darkMode ?? false}
-        disabled={darkMode === undefined}
-        onChange={(event) => changeTheme(event.currentTarget.checked)}
-      />
-      Dark mode
-    </label>
+    <button
+      type="button"
+      className="icon-button theme-toggle"
+      aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+      disabled={darkMode === undefined}
+      onClick={() => changeTheme(!darkMode)}
+    >
+      {darkMode ? (
+        <Sun size={17} aria-hidden="true" />
+      ) : (
+        <Moon size={17} aria-hidden="true" />
+      )}
+    </button>
   );
 }

@@ -13,11 +13,19 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" className="inner-page about-page" tabIndex={-1}>
       <BackToHome />
-      <section aria-labelledby="about-title">
-        <h1 id="about-title">About</h1>
-        <p>{profile.role} · {profile.location}</p>
+      <section className="about-intro" aria-labelledby="about-title">
+        <p className="eyebrow">
+          <span aria-hidden="true" />
+          BEHIND THE WORK
+        </p>
+        <h1 id="about-title">
+          About<span className="heading-dot">.</span>
+        </h1>
+        <p className="about-role">
+          {profile.role} · {profile.location}
+        </p>
         <p>{profile.positioning}</p>
         <p>{profile.availability}</p>
         <p>
@@ -31,10 +39,10 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section aria-labelledby="education-title">
+      <section className="about-block" aria-labelledby="education-title">
         <h2 id="education-title">Education</h2>
         {education.map((item) => (
-          <div key={item.field}>
+          <div className="education-card" key={item.field}>
             <p>
               <strong>{item.degree}</strong>
               <br />
@@ -56,9 +64,9 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <section aria-labelledby="approach-title">
+      <section className="about-block" aria-labelledby="approach-title">
         <h2 id="approach-title">How I work</h2>
-        <ul>
+        <ul className="approach-list">
           <li>Define the problem and establish a baseline.</li>
           <li>Keep training, model selection, and testing separate.</li>
           <li>Use consistent preprocessing in training and inference.</li>
@@ -66,9 +74,9 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <section aria-labelledby="interests-title">
+      <section className="about-block" aria-labelledby="interests-title">
         <h2 id="interests-title">Interests</h2>
-        <ul>
+        <ul className="tech-tags">
           {technicalInterests.map((interest) => (
             <li key={interest}>{interest}</li>
           ))}

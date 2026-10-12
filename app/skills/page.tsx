@@ -10,9 +10,17 @@ export const metadata: Metadata = {
 
 export default function SkillsPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" className="inner-page" tabIndex={-1}>
       <BackToHome />
-      <h1>Skills</h1>
+      <div className="page-heading">
+        <p className="eyebrow">
+          <span aria-hidden="true" />
+          THE TOOLKIT
+        </p>
+        <h1>
+          Skills<span className="heading-dot">.</span>
+        </h1>
+      </div>
       <SkillsGrid />
     </main>
   );

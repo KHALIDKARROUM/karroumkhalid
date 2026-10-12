@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProject, projects } from '@/data/projects';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ProjectArtwork } from '@/components/portfolio/ProjectArtwork';
 
 type ProjectPageProps = { params: Promise<{ slug: string }> };
 
@@ -34,19 +36,34 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) notFound();
 
   return (
-    <main id="main-content" tabIndex={-1}>
-      <section aria-labelledby="project-title">
-        <p>
-          <Link href="/projects">All projects</Link>
+    <main
+      id="main-content"
+      className="inner-page case-page"
+      data-accent={project.accent}
+      tabIndex={-1}
+    >
+      <section className="case-intro" aria-labelledby="project-title">
+        <p className="back-link">
+          <Link href="/projects">
+            <ArrowLeft size={14} aria-hidden="true" />
+            All projects
+          </Link>
+        </p>
+        <p className="eyebrow">
+          <span aria-hidden="true" />
+          {project.eyebrow}
         </p>
         <h1 id="project-title">{project.title}</h1>
-        <p>{project.summary}</p>
-        <p>
-          <strong>Technologies:</strong> {project.tech.join(', ')}
-        </p>
-        <p>
-          <a href={project.repository}>Source code on GitHub</a>
-        </p>
+        <p className="case-summary">{project.summary}</p>
+        <ul className="tech-tags" aria-label="Technologies">
+          {project.tech.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
+        <a className="button button-primary" href={project.repository}>
+          Source code on GitHub <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+        <ProjectArtwork slug={project.slug} />
       </section>
 
       <section aria-labelledby="problem-title">
@@ -62,11 +79,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {project.metrics && project.metrics.length > 0 && (
         <section aria-labelledby="evaluation-title">
           <h2 id="evaluation-title">Evaluation</h2>
-          <dl>
+          <dl className="metrics-grid">
             {project.metrics.map((metric) => (
-              <div key={metric.label}>
+              <div className="metric-card" key={metric.label}>
                 <dt>
-                  {metric.label}: {metric.value}
+                  <span>{metric.label}</span>
+                  <strong>{metric.value}</strong>
                 </dt>
                 <dd>{metric.context}</dd>
               </div>
@@ -78,7 +96,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {project.architecture && project.architecture.length > 0 && (
         <section aria-labelledby="workflow-title">
           <h2 id="workflow-title">Workflow</h2>
-          <ol>
+          <ol className="workflow-list">
             {project.architecture.map((step) => (
               <li key={step}>{step}</li>
             ))}

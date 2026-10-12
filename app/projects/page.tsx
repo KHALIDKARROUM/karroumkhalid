@@ -11,9 +11,17 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" className="inner-page" tabIndex={-1}>
       <BackToHome />
-      <h1>Projects</h1>
+      <div className="page-heading">
+        <p className="eyebrow">
+          <span aria-hidden="true" />
+          THE PORTFOLIO
+        </p>
+        <h1>
+          Projects<span className="heading-dot">.</span>
+        </h1>
+      </div>
       <div className="project-list">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} headingLevel={2} />

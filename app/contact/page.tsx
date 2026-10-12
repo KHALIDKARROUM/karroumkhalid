@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" className="inner-page contact-page" tabIndex={-1}>
       <BackToHome />
       <ContactCTA headingLevel={1}>
         <p>{profile.availability}</p>

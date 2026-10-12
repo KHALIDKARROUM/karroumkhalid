@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { profile } from '@/data/profile';
 import { ResumeLink } from './ResumeLink';
+import { ArrowUpRight, Mail } from 'lucide-react';
+import { GithubIcon, LinkedInIcon } from './BrandIcons';
 
 type ContactCTAProps = {
   headingLevel?: 1 | 2;
@@ -11,13 +13,48 @@ export function ContactCTA({ headingLevel = 2, children }: ContactCTAProps) {
   const Heading = headingLevel === 1 ? 'h1' : 'h2';
 
   return (
-    <section id="contact" aria-labelledby="contact-title">
-      <Heading id="contact-title">Contact</Heading>
-      {children}
+    <section
+      id="contact"
+      className="contact-panel"
+      aria-labelledby="contact-title"
+    >
+      <div className="contact-copy">
+        <p className="eyebrow">
+          <span aria-hidden="true" />
+          LET’S CONNECT
+        </p>
+        <Heading id="contact-title">Contact</Heading>
+        {children}
+      </div>
       <div className="links">
-        {profile.email && <a href={`mailto:${profile.email}`}>Email</a>}
-        {profile.linkedIn && <a href={profile.linkedIn}>LinkedIn</a>}
-        <a href={profile.github}>GitHub</a>
+        {profile.email && (
+          <a className="contact-link" href={`mailto:${profile.email}`}>
+            <Mail size={20} aria-hidden="true" />
+            <span>
+              <small>EMAIL</small>
+              {profile.email}
+            </span>
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+        )}
+        {profile.linkedIn && (
+          <a className="contact-link" href={profile.linkedIn}>
+            <LinkedInIcon size={20} />
+            <span>
+              <small>LINKEDIN</small>
+              {profile.name}
+            </span>
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+        )}
+        <a className="contact-link" href={profile.github}>
+          <GithubIcon size={22} />
+          <span>
+            <small>GITHUB</small>
+            {profile.github.split('/').pop()}
+          </span>
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
         <ResumeLink />
       </div>
     </section>

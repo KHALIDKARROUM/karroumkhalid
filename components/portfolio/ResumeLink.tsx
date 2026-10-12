@@ -8,7 +8,7 @@ export function ResumeLink({ compact = false }: ResumeLinkProps) {
   if (!profile.resume.available) return null;
 
   return (
-    <a href={profile.resume.path} download>
+    <a className="button button-secondary" href={profile.resume.path} download>
       {compact ? 'Resume' : 'Download CV'}
     </a>
   );

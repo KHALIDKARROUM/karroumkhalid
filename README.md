@@ -1,14 +1,14 @@
 # Khalid Karroum — Portfolio
 
-A simple portfolio for data science, machine learning, and backend projects.
+A portfolio for data science, machine learning, and backend projects, with a dark technical design, blue accents, illustrated project cards, and responsive layouts.
 
-The home page shows large section titles. Each title opens its details in the same tab and shared page layout, with a link back home. Project details include the problem, implementation, evaluation context, limitations, and source code.
+The home page introduces Khalid and showcases his existing projects, skills, education, and contact links. Each section also has a dedicated page in the shared layout, with a link back home. Project details include the problem, implementation, evaluation context, limitations, and source code. The charts on project cards are decorative illustrations, not reported evaluation results.
 
-The Dark mode checkbox in the header switches the color scheme and remembers the choice in your browser.
+The theme button in the header switches between dark and light appearances and remembers the choice in your browser. Dark is the default. On narrow screens, the menu button opens the navigation.
 
 ## Pages
 
-- `/` — large Projects, Skills, About, and Contact links
+- `/` — introduction, project gallery, skills, about, and contact
 - `/projects` — all five projects
 - `/projects/[slug]` — project details
 - `/skills` — skill groups and technologies
