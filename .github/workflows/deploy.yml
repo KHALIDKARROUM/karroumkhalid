@@ -33,7 +33,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: ./out
+          path: ./.next-vercel
 
   deploy:
     needs: build
