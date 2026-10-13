@@ -1,17 +1,32 @@
 export const profile = {
   name: 'Khalid Karroum',
   role: 'Data Scientist & Machine Learning Engineer',
-  location: 'Morocco',
-  availability:
-    'Looking for PFE and internship opportunities in data science and AI.',
+  location: 'Skhirate, Rabat, Morocco',
+  availability: 'Available January 2027 for a six-month PFE internship.',
+  internship: {
+    startDate: 'January 2027',
+    duration: '6 months',
+    targetRoles: [
+      'Data Science',
+      'Machine Learning',
+      'Data Analytics',
+      'Data Engineering',
+    ],
+    remote: undefined as boolean | undefined,
+    relocation: undefined as boolean | undefined,
+  },
   positioning:
     'I work with data, train machine-learning models, and build applications around them.',
   github: 'https://github.com/KHALIDKARROUM',
-  email: undefined as string | undefined,
+  email: 'karroumkhalid6@gmail.com',
+  phone: {
+    number: '+212641837579',
+    display: '+212 641 837 579',
+  },
   linkedIn: 'https://www.linkedin.com/in/khalid-karroum/',
   resume: {
     path: '/Khalid-Karroum-CV.pdf',
-    available: false,
+    available: true,
   },
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
 } as const;

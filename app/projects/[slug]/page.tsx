@@ -34,6 +34,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
+  const [heroScreenshot, ...detailScreenshots] = project.screenshots ?? [];
 
   return (
     <main
@@ -63,7 +64,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <a className="button button-primary" href={project.repository}>
           Source code on GitHub <ArrowUpRight size={16} aria-hidden="true" />
         </a>
-        <ProjectArtwork slug={project.slug} />
+        {heroScreenshot ? (
+          <figure className="case-hero-screenshot">
+            <a
+              href={heroScreenshot.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open dashboard screenshot in a new tab"
+            >
+              <img
+                src={heroScreenshot.src}
+                alt={heroScreenshot.alt}
+                width={heroScreenshot.width}
+                height={heroScreenshot.height}
+              />
+            </a>
+            <figcaption>{heroScreenshot.caption}</figcaption>
+          </figure>
+        ) : (
+          <ProjectArtwork slug={project.slug} />
+        )}
       </section>
 
       <section aria-labelledby="problem-title">
@@ -107,7 +127,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="case-sections" aria-label="Project details">
         {project.sections.map((section, index) => (
           <section
-            id={`section-${index + 1}`}
+            id={section.id ?? `section-${index + 1}`}
             key={section.title}
             aria-labelledby={`detail-${index + 1}`}
           >
@@ -123,6 +143,31 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </section>
         ))}
       </section>
+
+      {detailScreenshots.length > 0 && (
+        <section className="case-gallery" aria-labelledby="screenshots-title">
+          <h2 id="screenshots-title">Inside the analysis</h2>
+          {detailScreenshots.map((screenshot) => (
+            <figure key={screenshot.src}>
+              <a
+                href={screenshot.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${screenshot.alt} Open full-size image in a new tab.`}
+              >
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={screenshot.width}
+                  height={screenshot.height}
+                  loading="lazy"
+                />
+              </a>
+              <figcaption>{screenshot.caption}</figcaption>
+            </figure>
+          ))}
+        </section>
+      )}
 
       <section id="lessons" aria-labelledby="lessons-title">
         <h2 id="lessons-title">What I learned</h2>
@@ -143,6 +188,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <section aria-label="Project navigation">
+        {project.evidence && (
+          <ul className="case-evidence">
+            {project.evidence.map((source) => (
+              <li key={source.url}>
+                <a href={source.url}>
+                  {source.label} <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
         <Link href="/projects">Back to all projects</Link>
       </section>
     </main>

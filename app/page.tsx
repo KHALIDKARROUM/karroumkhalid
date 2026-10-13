@@ -1,5 +1,11 @@
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  Mail,
+  MapPin,
+} from 'lucide-react';
 import { ContactCTA } from '@/components/portfolio/ContactCTA';
 import { GithubIcon } from '@/components/portfolio/BrandIcons';
 import { PipelineVisual } from '@/components/portfolio/PipelineVisual';
@@ -51,6 +57,12 @@ export default function Home() {
               View my projects <ArrowRight size={17} aria-hidden="true" />
             </Link>
             <ResumeLink />
+            <a
+              className="button button-secondary"
+              href={`mailto:${profile.email}`}
+            >
+              <Mail size={16} aria-hidden="true" /> Email me
+            </a>
             <a className="button button-secondary" href={profile.github}>
               <GithubIcon size={17} />
               GitHub <ArrowUpRight size={14} aria-hidden="true" />
@@ -85,6 +97,13 @@ export default function Home() {
           </p>
           <Link className="text-link" href="/about">
             More about me <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+          <Link
+            className="text-link home-experience-link"
+            href="/projects/price-monitor"
+          >
+            Price Monitor · Delta Holding internship{' '}
+            <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </div>
         <div className="about-preview-details">

@@ -113,10 +113,23 @@ export default function AboutPage() {
               <div>
                 <p className="experience-type">{item.type}</p>
                 <h3>{item.company}</h3>
-                <p className="experience-focus">{item.focus}</p>
+                <p className="experience-focus">{item.role}</p>
               </div>
               <span className="project-label">{item.project}</span>
             </div>
+            <dl className="experience-facts">
+              <div>
+                <dt>Dates</dt>
+                <dd>
+                  <time dateTime={item.startDate}>1 September 2026</time> –
+                  present
+                </dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>{item.location}</dd>
+              </div>
+            </dl>
             <p className="experience-summary">{item.summary}</p>
             <ul className="experience-highlights">
               {item.highlights.map((highlight) => (
@@ -128,6 +141,13 @@ export default function AboutPage() {
                 <li key={technology}>{technology}</li>
               ))}
             </ul>
+            <Link
+              className="text-link experience-project-link"
+              href={`/projects/${item.projectSlug}`}
+            >
+              Explore {item.project}{' '}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
           </article>
         ))}
       </section>

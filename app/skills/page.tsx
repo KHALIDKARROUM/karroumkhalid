@@ -21,6 +21,11 @@ export default function SkillsPage() {
           Skills<span className="heading-dot">.</span>
         </h1>
       </div>
+      <p className="skills-evidence-intro">
+        Follow a skill to see how I used it in a project. Items marked
+        “Familiarity” reflect tools or topics without a published project
+        example.
+      </p>
       <SkillsGrid />
     </main>
   );

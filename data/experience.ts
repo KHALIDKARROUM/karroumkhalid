@@ -3,14 +3,20 @@ export const experience = [
     id: 'delta-holding',
     company: 'Delta Holding',
     focus: 'Python Development & Data Analysis',
+    role: 'Python Developer & Data Analyst Intern',
+    startDate: '2026-09-01',
+    endDate: undefined,
+    period: '1 September 2026 – present',
+    location: 'Skhirate, Rabat, Morocco',
     type: 'Internship',
     project: 'Price Monitor',
+    projectSlug: 'price-monitor',
     summary:
       'Developed Price Monitor, a market-monitoring application for diesel, Brent, and bitumen, connecting traceable data collection, analysis, forecasting, and a responsive dashboard.',
     highlights: [
-      'Automated API collection, data-quality checks, and historical comparisons while keeping market prices, supplier quotes, and the bitumen index distinct.',
-      'Built a reproducible data science workflow covering cleaning, exploratory analysis, feature engineering, and time-series forecasting with backtesting and baseline comparisons.',
-      'Added price alerts, supplier-quote management, budget tracking, and CSV/Excel exports to support purchasing analysis.',
+      'Automated market-data collection and SQL storage with date and unit validation, duplicate handling, and separate source-publication and collection timestamps, making price history traceable.',
+      'Built a reproducible forecasting workflow on a 1,287-row historical snapshot (10 September 2021–9 September 2026), with chronological validation and comparisons against the last-known-price baseline.',
+      'Connected supplier-quote entry, price alerts, purchase-budget calculations, and CSV/Excel exports in a responsive dashboard, bringing purchasing preparation into one application.',
     ],
     technologies: [
       'Python',

@@ -7,10 +7,11 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import Link from 'next/link';
-import { projects } from '@/data/projects';
+import { getProject } from '@/data/projects';
 
 export function PipelineVisual() {
-  const project = projects[0];
+  const project = getProject('aegis-credit');
+  if (!project) return null;
 
   return (
     <div className="pipeline-wrap">

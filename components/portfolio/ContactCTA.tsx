@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { profile } from '@/data/profile';
 import { ResumeLink } from './ResumeLink';
-import { ArrowUpRight, Mail } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone } from 'lucide-react';
 import { GithubIcon, LinkedInIcon } from './BrandIcons';
 
 type ContactCTAProps = {
@@ -37,6 +37,14 @@ export function ContactCTA({ headingLevel = 2, children }: ContactCTAProps) {
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         )}
+        <a className="contact-link" href={`tel:${profile.phone.number}`}>
+          <Phone size={20} aria-hidden="true" />
+          <span>
+            <small>PHONE</small>
+            {profile.phone.display}
+          </span>
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
         {profile.linkedIn && (
           <a className="contact-link" href={profile.linkedIn}>
             <LinkedInIcon size={20} />

@@ -1,4 +1,6 @@
-import { skillGroups } from '@/data/skills';
+import Link from 'next/link';
+import { skillEvidence, skillGroups } from '@/data/skills';
+import { getProject } from '@/data/projects';
 import {
   BarChart3,
   BrainCircuit,
@@ -26,12 +28,32 @@ export function SkillsGrid() {
             <dd>
               <p>{group.description}</p>
               <ul className="skill-items">
-                {group.items.map((item) => (
-                  <li key={item}>
-                    <span aria-hidden="true" />
-                    {item}
-                  </li>
-                ))}
+                {group.items.map((item) => {
+                  const evidence = skillEvidence[item];
+                  const project = evidence
+                    ? getProject(evidence.project)
+                    : undefined;
+                  return (
+                    <li key={item}>
+                      <span aria-hidden="true" />
+                      {project ? (
+                        <Link
+                          className="skill-evidence-link"
+                          href={`/projects/${project.slug}${evidence.section ? '#' + evidence.section : ''}`}
+                          aria-label={`${item} — see evidence in ${project.title}`}
+                        >
+                          {item}
+                          <small>{project.title} ↗</small>
+                        </Link>
+                      ) : (
+                        <span className="skill-familiarity">
+                          {item}
+                          <small>Familiarity</small>
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </dd>
           </div>

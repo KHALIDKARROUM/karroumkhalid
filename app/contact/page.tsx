@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import { AvailabilityDetails } from '@/components/portfolio/AvailabilityDetails';
 import { BackToHome } from '@/components/portfolio/BackToHome';
 import { GithubIcon, LinkedInIcon } from '@/components/portfolio/BrandIcons';
 import { ResumeLink } from '@/components/portfolio/ResumeLink';
@@ -9,7 +10,7 @@ import { profile, socialAccounts } from '@/data/profile';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Connect with Khalid Karroum on LinkedIn and GitHub for data science, machine learning, and internship opportunities.',
+    'Email or call Khalid Karroum, download his CV, and explore six-month PFE internship opportunities starting January 2027.',
 };
 
 const socialIcons = { linkedin: LinkedInIcon, github: GithubIcon };
@@ -31,8 +32,8 @@ export default function ContactPage() {
             A conversation can be the start of something great.
           </p>
           <p className="contact-introduction">
-            Find me on LinkedIn for professional opportunities, or explore my
-            projects and code on GitHub.
+            Get in touch about data science and machine-learning opportunities,
+            or download my CV to keep my profile on hand.
           </p>
         </div>
         <div className="contact-identity-card">
@@ -47,6 +48,33 @@ export default function ContactPage() {
               {profile.location}
             </span>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="contact-direct"
+        aria-labelledby="direct-contact-title"
+      >
+        <div>
+          <h2 id="direct-contact-title">Get in touch</h2>
+          <a className="contact-email" href={`mailto:${profile.email}`}>
+            <Mail size={20} aria-hidden="true" />
+            <span>{profile.email}</span>
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+          <a
+            className="contact-email contact-phone"
+            href={`tel:${profile.phone.number}`}
+          >
+            <Phone size={20} aria-hidden="true" />
+            <span>{profile.phone.display}</span>
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        </div>
+        <div className="contact-cv">
+          <p>Keep a copy of my profile</p>
+          <ResumeLink />
+          <span className="muted">English · PDF</span>
         </div>
       </section>
 
@@ -103,6 +131,7 @@ export default function ContactPage() {
           </p>
           <h2 id="opportunity-title">Let’s put data to work.</h2>
           <p>{profile.availability}</p>
+          <AvailabilityDetails />
         </div>
         <div className="contact-opportunity-actions">
           <a

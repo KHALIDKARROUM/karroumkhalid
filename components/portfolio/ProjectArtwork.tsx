@@ -1,6 +1,21 @@
 type ProjectArtworkProps = { slug: string };
 
 export function ProjectArtwork({ slug }: ProjectArtworkProps) {
+  if (slug === 'price-monitor') {
+    return (
+      <div className="project-artwork artwork-price-monitor" aria-hidden="true">
+        <img
+          src="/projects/price-monitor/dashboard.jpg"
+          alt=""
+          width={1265}
+          height={712}
+          loading="lazy"
+        />
+        <span className="artwork-label">energy / market monitoring</span>
+      </div>
+    );
+  }
+
   return (
     <div className={`project-artwork artwork-${slug}`} aria-hidden="true">
       <svg

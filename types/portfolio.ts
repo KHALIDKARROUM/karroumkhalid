@@ -5,6 +5,7 @@ export type Metric = {
 };
 
 export type CaseStudySection = {
+  id?: string;
   title: string;
   summary: string;
   bullets?: string[];
@@ -23,6 +24,14 @@ export type Project = {
   accent: 'lime' | 'blue' | 'amber' | 'violet';
   tags: string[];
   tech: string[];
+  screenshots?: {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  }[];
+  evidence?: { label: string; url: string }[];
   metrics?: Metric[];
   architecture?: string[];
   sections: CaseStudySection[];
