@@ -10,7 +10,7 @@ import { profile, socialAccounts } from '@/data/profile';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Email or call Khalid Karroum, download his CV, and explore six-month PFE internship opportunities starting January 2027.',
+    'Email or call Khalid Karroum, view his CV, and explore six-month PFE internship opportunities starting January 2027.',
 };
 
 const socialIcons = { linkedin: LinkedInIcon, github: GithubIcon };
@@ -33,7 +33,7 @@ export default function ContactPage() {
           </p>
           <p className="contact-introduction">
             Get in touch about data science and machine-learning opportunities,
-            or download my CV to keep my profile on hand.
+            or view my CV in your browser.
           </p>
         </div>
         <div className="contact-identity-card">
@@ -72,7 +72,7 @@ export default function ContactPage() {
           </a>
         </div>
         <div className="contact-cv">
-          <p>Keep a copy of my profile</p>
+          <p>Explore my experience</p>
           <ResumeLink />
           <span className="muted">English · PDF</span>
         </div>

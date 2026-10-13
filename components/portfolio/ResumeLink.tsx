@@ -1,5 +1,5 @@
 import { profile } from '@/data/profile';
-import { Download } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 type ResumeLinkProps = {
   compact?: boolean;
@@ -12,10 +12,12 @@ export function ResumeLink({ compact = false }: ResumeLinkProps) {
     <a
       className="button button-secondary"
       href={profile.resume.path}
-      download="Khalid-Karroum-CV.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View CV (opens in a new tab)"
     >
-      <Download size={16} aria-hidden="true" />
-      {compact ? 'Resume' : 'Download CV'}
+      <FileText size={16} aria-hidden="true" />
+      {compact ? 'Resume' : 'View CV'}
     </a>
   );
 }
