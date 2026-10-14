@@ -94,6 +94,8 @@ export default function AboutPage() {
             French · B2
             <span />
             English · B2
+            <span />
+            Arabic · Native
           </div>
         </aside>
       </section>
@@ -171,11 +173,14 @@ export default function AboutPage() {
           {languages.map((language) => (
             <article className="language-card" key={language.name}>
               <span className="language-code" aria-hidden="true">
-                {language.name === 'French' ? 'FR' : 'EN'}
+                {language.code}
               </span>
               <div>
                 <h3>{language.name}</h3>
-                <p>{language.description} · CEFR</p>
+                <p>
+                  {language.description}
+                  {language.level !== 'Native' && ' · CEFR'}
+                </p>
               </div>
               <span
                 className="language-level"

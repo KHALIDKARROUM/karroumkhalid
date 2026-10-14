@@ -40,8 +40,9 @@ export const technicalInterests = [
 ] as const;
 
 export const languages = [
-  { name: 'French', level: 'B2', description: 'Upper-intermediate' },
-  { name: 'English', level: 'B2', description: 'Upper-intermediate' },
+  { code: 'FR', name: 'French', level: 'B2', description: 'Upper-intermediate' },
+  { code: 'EN', name: 'English', level: 'B2', description: 'Upper-intermediate' },
+  { code: 'AR', name: 'Arabic', level: 'Native', description: 'Native speaker' },
 ] as const;
 
 export const socialAccounts = [
